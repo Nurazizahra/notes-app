@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+</head>
+<body>
+  <header>
+    <app-bar></app-bar>
+  </header>
+  <main>
+    <section class="opening"> 
+        <iframe src="https://giphy.com/embed/06aA0f1QpAshEfFbFH" frameBorder="0" class="giphy-embed" 
+        allowFullScreen></iframe>
+    </section>
+    <section class="input_section">
+      <form id="inputNotes">
+        <div class="input">
+          <label for="inputTitle">Judul</label>
+          <input id="inputTitle" type="text" required>
+        </div>
+        <div class="input">
+          <label for="inputBody">Isi Catatan</label>
+          <textarea id="inputBody" type="text" required></textarea>
+        </div>
+        <button id="noteSubmit" type="submit">Tambahkan Catatan</button>
+      </form>
+    </section>
+    <section class="note_shelf">
+      <h2>Catatan Saya</h2>
+      <div id="unArchivedNoteshelfList" class="note_list">
+      </div>
+    </section>
+    
+    <section class="note_shelf">
+      <h2>Arsip</h2>
+      <div id="archivedNoteshelfList" class="note_list">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <footer-bar></footer-bar>
+  </footer>
+</body>
+</html>

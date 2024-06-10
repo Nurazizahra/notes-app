@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto; 
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #AD88C6;
+
+  color: beige;
+}
+
+header {
+  grid-row: 1; 
+}
+
+main {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+
+}
+
+.opening {
+  display: flex; 
+  justify-content: center;
+  margin: 4em;
+}
+
+.opening>iframe {
+  width: 100%; 
+  height: 100%;
+}
+
+.input_section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #AD88C6;
+  border-radius: 10px;
+}
+
+.input_section>form>.input {
+  margin: 8px 0;
+}
+
+.input_section>form>button {
+  background-color: #7469B6;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5740da;
+}
+
+.input_section>form>.input>input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.input_section>form>.input>textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input_section>form>.input>label {
+  font-weight: bold;
+  color: white;
+}
+
+.note_shelf {
+  margin: 16px 0 0 0;
+  background-color: #AD88C6;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.note_shelf h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.note_shelf>.note_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.note_shelf>.note_list>.note_item {
+  padding: 10px;
+  border: 1px solid #AD88C6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: white
+}
+
+.note_shelf>.note_list>.note_item>h3,
+p {
+    margin: 8px 0;
+}
+
+.note_shelf>.note_list>.note_item>.action>button {
+  border: 0;
+  padding: 5px;
+  margin: 0 5px 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.note_shelf>.note_list>.note_item>.action>.deleteNote {
+  background-color: #A0153E;
+  color: white;
+}
+
+.note_shelf>.note_list>.note_item>.action>.archiveNote {
+  background-color: #FDAF7B;
+  color: white;
+}
+
+.note_shelf>.note_list>.note_item>.action>.unarchiveNote {
+  background-color: #EFBC9B;
+  color: white;
+}
+
+input,
+button {
+    font-size: 16px;
+}
+
+footer {
+  grid-row: 3; 
+}
+
+/* style.css */
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .note_shelf > .note_list {
+    grid-template-columns: 1fr; 
+  }
+}
